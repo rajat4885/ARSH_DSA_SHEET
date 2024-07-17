@@ -24,3 +24,33 @@ arr[j+1]=arr[i];
     }
 };
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q: Two Sum
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+SOLUTION--->
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>&arr, int target) {
+     map<int,int>mp;
+
+     for(int i=0;i<arr.size();i++){
+        int rem= target-arr[i];
+
+        if(mp.find(rem)!=mp.end()){
+
+            return{mp[rem],i};
+        }
+        mp[arr[i]]=i;
+     }   
+
+     return{-1,-1};
+    }
+};
